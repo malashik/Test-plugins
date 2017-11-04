@@ -2,11 +2,12 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const del = require('del');
 const notify = require('gulp-notify');
-// const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 // const cache = require('gulp-cache');
 const browserSync = require('browser-sync').create();
 
-const sass = require('gulp-sass');
+const less = require('gulp-less');
+var csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
@@ -19,7 +20,7 @@ const paths = {
 		dest: 'build/pages'
 	},
 	styles: {
-		src: 'src/styles/common/menu.scss',
+		src: 'src/styles/common/menu.less',
 		dest: 'build/assets/styles/common/'
 	},
 	images: {
@@ -55,7 +56,8 @@ gulp.task('styles', function(){
 		// .pipe(wait(600))
 		.pipe(sourcemaps.init())
 		.pipe(autoprefixer())
-		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(less())
+		.pipe(csso())
 		.pipe(sourcemaps.write())
 		.on('error', notify.onError())
 		.pipe(rename({suffix: '.min'}))
@@ -88,7 +90,7 @@ gulp.task('images', function(){
 gulp.task('watch', function(){
     gulp.watch("src/templates/**/*.*", gulp.series('templates'));
     // gulp.watch(paths.styles.src, ['styles']);
-    gulp.watch("src/styles/**/*.scss", gulp.series('styles'));
+    gulp.watch("src/styles/**/*.less", gulp.series('styles'));
     gulp.watch("src/images/**/*.*", gulp.series('images'));
     gulp.watch("src/fonts/**/*.*", gulp.series('fonts'));
     gulp.watch("src/js/**/*.*", gulp.series('js'));

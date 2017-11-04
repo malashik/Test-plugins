@@ -1,0 +1,153 @@
+// COLORS
+@main: #28363d;
+@orange: #ff8207;
+
+
+.head{
+    height: auto;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    background: url(../../images/bg/head-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+.head__content{
+    width: 1400px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    
+}
+.header{
+    height: 120px;
+    background: @main;
+    color:#fff;
+    height: 120px;
+}
+.logo{
+    width: 230px;
+    padding: 35px 0;
+    text-align: left;
+}
+.nav{
+    width: 940px;
+}
+.nav__list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.nav__item{
+    width: 140px;
+    height: 100%;
+    border-bottom: solid 4px transparent;
+    transition: .2s;
+    line-height: 120px;
+    &:hover{
+        border-bottom:  solid 4px @orange;
+    }
+    &_active{
+        background: #1e292f;
+        color: #6b848c;
+        border-bottom:  solid 4px @orange;
+    }
+    
+}
+.header__phone{
+    width: 230px;
+    font-size: 24px;
+    color: @orange;
+    padding: 30px 0;
+    font-weight: 600;
+    p{
+        margin: 0 0 16px;
+        line-height: 1;
+    }
+}
+.slider{
+    position: relative;
+    height:100vh;
+    min-height:768px;
+    max-height: 1080px; 
+}
+.container{
+    width: 940px;
+    margin: auto;
+    height: 100%;
+}
+.slide{
+    padding-top: 145px;
+    position: relative;
+    height: 100%;
+}
+.slider__title{
+    font-size: 48px;
+    font-weight: 600;
+}
+.slider__line{
+    padding: 50px 0;
+}
+.slider__text{
+    font-size: 24px;
+}
+.slider__button{
+    font-size: 32px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: rgb(255, 130, 7);
+    width: 400px;
+    height: 80px;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 169px;
+}
+// .btn__left {
+//     svg{
+//         transform: scale(2);
+//         opacity: 1;
+//         z-index: 9999;
+//         background: rgb(102, 11, 11);
+//         fill-opacity: .5;
+//     }
+// }
+.btns{
+    cursor: pointer;
+}
+.btn__left,
+.btn__right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn__left{
+    left: 350px;
+}
+.btn__right{
+    right: 350px;
+}
+.btn__down{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 45px;
+}
+.head-nav{
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 165px;
+}
+.head-nav__circle{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: @main;
+    &_active{
+        background: @orange;
+    }
+}
