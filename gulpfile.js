@@ -6,7 +6,7 @@ const imagemin = require('gulp-imagemin');
 // const cache = require('gulp-cache');
 const browserSync = require('browser-sync').create();
 
-const less = require('gulp-less');
+const stylus = require('gulp-stylus');
 var csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
@@ -20,7 +20,7 @@ const paths = {
 		dest: 'build/pages'
 	},
 	styles: {
-		src: 'src/styles/common/menu.less',
+		src: 'src/styles/common/menu.styl',
 		dest: 'build/assets/styles/common/'
 	},
 	images: {
@@ -56,8 +56,8 @@ gulp.task('styles', function(){
 		// .pipe(wait(600))
 		.pipe(sourcemaps.init())
 		.pipe(autoprefixer())
-		.pipe(less())
-		.pipe(csso())
+		.pipe(stylus())
+		// .pipe(csso())
 		.pipe(sourcemaps.write())
 		.on('error', notify.onError())
 		.pipe(rename({suffix: '.min'}))
@@ -90,7 +90,7 @@ gulp.task('images', function(){
 gulp.task('watch', function(){
     gulp.watch("src/templates/**/*.*", gulp.series('templates'));
     // gulp.watch(paths.styles.src, ['styles']);
-    gulp.watch("src/styles/**/*.less", gulp.series('styles'));
+    gulp.watch("src/styles/**/*.styl", gulp.series('styles'));
     gulp.watch("src/images/**/*.*", gulp.series('images'));
     gulp.watch("src/fonts/**/*.*", gulp.series('fonts'));
     gulp.watch("src/js/**/*.*", gulp.series('js'));
