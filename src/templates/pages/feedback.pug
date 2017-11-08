@@ -1,36 +1,45 @@
-.feedback__container.container
-    .feedback
-        .feedback__title.title оставьте отзыв
-        .feedback__line.line
-        .feedback__line.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
-        .feedback__left
-            .feedback__left-address наш адресс
-                p г.Минск, ул. Скрыганова, 6А, 4 этаж
-            .feedback__left-phone звоните
-            p +375 (29) 123-45-67,  +375 (33) 123-45-67
-            .feedback__left-email пишите
-            p info@promo-webcom.by
-        .feedback__right
-            form.form
-                label.feedback__right-name
-                    span.feedback__right-title.title ВАШЕ ИМЯ
-                    input(type="text" placeholder="Иванов Иван")
-                label.feedback__right-mail
-                    span.feedback__right-title.title E-MAIL
-                    input(type="text" placeholder="example@mysite.com")
-                label.feedback__right-job
-                    span.feedback__right-title.title ВАША ДОЛЖНОСТЬ
-                    input(type="text" placeholder="Должность")
-                .feedback__right-feedb
-                    span.feedback__right-title.title ОТЗЫВ
-                    textarea(placeholder="Ваше сообщение")
-                .feedback__right-photo
-                    .add-photo
-                    span ФОТО
-                label.feedback__right-password
-                    span.feedback__right-title.title ВВЕДИТЕ КОД С КАРТИНКИ
-                    input(type="text")
-                .feedback__right-row
-                    img.img-password
-                    input(type="submit" value="Отправить")
-    .arrow-top
+section.section.feedback
+    .feedback-container
+        .content
+            .feedback__title.title оставьте отзыв
+            .feedback__line.line
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31px" height="6px"><image  x="0px" y="0px" width="31px" height="6px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAGBAMAAADJWVhZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAHlBMVEX/ggf/////ggf/ggf/ggf/ggf/ggf/ggf/ggf///+jZ6zOAAAACXRSTlMAAJ5e2l/5m9uTnZeZAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+ELBRQuNRdZZQcAAABYSURBVAjXHcyxCcAwDETRA+Peh0gfyAJO4wW8gNyI9EZkA88fOc0rfvFxAUgdoHSScsIq0FYF27rJpsgTyQPxY1K8AKamm0EbNiLk13/II4iARzcjlkH5APfVEAx/KMFBAAAAAElFTkSuQmCC" /></svg>
+            .feedback__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+        .feedback__container
+            .feedback__left
+                .feedback__left-info наш адресс
+                    p г.Минск, ул. Скрыганова, 6А, 4 этаж
+                .feedback__left-info звоните
+                    p +375 (29) 123-45-67,  +375 (33) 123-45-67
+                .feedback__left-info пишите
+                    p info@promo-webcom.by
+            .feedback__right
+                form.form
+                    label.feedback__right-item
+                        h4.feedback__right-title ВАШЕ ИМЯ
+                        input.input(type="text" placeholder="Иванов Иван" required)
+                    label.feedback__right-item
+                        h4.feedback__right-title E-MAIL
+                        input.input(type="text" placeholder="example@mysite.com" required)
+                    label.feedback__right-item
+                        h4.feedback__right-title ВАША ДОЛЖНОСТЬ
+                        input.input(type="text" placeholder="Должность" required)
+                    .feedback__right-item
+                        h4.feedback__right-title ОТЗЫВ
+                        textarea.textarea(placeholder="Ваше сообщение" required)
+                    .feedback__right-item
+                        .add-photo
+                            <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49px" height="60px"><path fill-rule="evenodd"  fill="rgb(255, 130, 7)" d="M10.000,-0.000 L39.000,-0.000 C44.523,-0.000 49.000,4.477 49.000,10.000 L49.000,50.000 C49.000,55.523 44.523,60.000 39.000,60.000 L10.000,60.000 C4.477,60.000 -0.000,55.523 -0.000,50.000 L-0.000,10.000 C-0.000,4.477 4.477,-0.000 10.000,-0.000 Z"/><text kerning="auto" font-family="Myriad Pro" fill="rgb(255, 255, 255)" font-size="30px" x="16px" y="39.0619999999999px">&#43;</text></svg>                    
+                        h4.feedback-photo ФОТО
+                    label.feedback__right-item
+                        h4.feedback__right-title ВВЕДИТЕ КОД С КАРТИНКИ
+                        input.input(type="text" required)
+                    .feedback__right-item.feedback__right-item_psw
+                        .img-password
+                            img.img-password(src="./assets/images/psw.jpg", alt="")
+                        input.input-btn(type="submit" value="Отправить" required)
+    svg.arrow-top(width="60px" height="60px")
+       use(xlink:href='../assets/images/icons/toTop.svg')
+    //-    use(xlink:href='../assets/images/icons/arrow_down.svg#down')
+        //- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.5px" height="64.5px"><path fill-rule="evenodd"  stroke="rgb(255, 130, 7)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M11.500,1.500 L51.500,1.500 C57.023,1.500 61.500,5.977 61.500,11.500 L61.500,51.500 C61.500,57.023 57.023,61.500 51.500,61.500 L11.500,61.500 C5.977,61.500 1.500,57.023 1.500,51.500 L1.500,11.500 C1.500,5.977 5.977,1.500 11.500,1.500 Z"/></svg>
+        //- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.5px" height="64.5px"><path fill-rule="evenodd"  stroke="rgb(255, 130, 7)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M11.500,1.500 L51.500,1.500 C57.023,1.500 61.500,5.977 61.500,11.500 L61.500,51.500 C61.500,57.023 57.023,61.500 51.500,61.500 L11.500,61.500 C5.977,61.500 1.500,57.023 1.500,51.500 L1.500,11.500 C1.500,5.977 5.977,1.500 11.500,1.500 Z"/></svg>

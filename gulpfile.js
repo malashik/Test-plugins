@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const del = require('del');
 const notify = require('gulp-notify');
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 // const cache = require('gulp-cache');
 const browserSync = require('browser-sync').create();
 
@@ -81,7 +81,7 @@ gulp.task('js', function() {
 //сжатие картинок +
 gulp.task('images', function(){
 	return gulp.src(paths.images.src)
-		.pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
+		// .pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
 		.pipe(gulp.dest(paths.images.dest));    		
 });
 
