@@ -28,27 +28,28 @@ colorHov = #c76906
 }
 .logo{
     width: 230px;
-    padding: 35px 0;
+    /* padding: 35px 0; */
     text-align: left;
+    display: flex;
+    margin: auto;
 }
-.nav{
-}
+
 .nav__list{
     width: 940px;
     display: flex;
     justify-content: space-between;
     height: 100%;
-    margin: auto
+    margin: auto;
+    padding: 0 10px;
 }
 .nav__item{
     height: 100%;
     display: block;
     border-bottom: solid 4px transparent;
     transition: .2s;
-    line-height: 120px;
-    margin: 0 auto;
-    padding: 0 10px;
     cursor: pointer;
+    display: flex;
+    margin: auto;
     &:hover{
         border-bottom:  solid 4px orange;
     }
@@ -60,42 +61,56 @@ colorHov = #c76906
 }
 .nav__item-link{
     display: block;
-    height: 100%;
+    height: auto;
+    color: #fff;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    margin: auto;
 }
+
 .header__phone{
     width: 230px;
+    height: 100%;
     font-size: 24px;
     color: orange;
-    padding: 30px 0 30px 10px;
     font-weight: 600;
-    p{
-        margin: 0 0 16px;
-        line-height: 1;
-        white-space: nowrap;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    padding: 5px 0;
+}
+.header__phone-link{
+    line-height: 1;
+    white-space: nowrap;
+    color: orange;
 }
 .slider{
-    position: relative;
+    position: absolute;
+    top: 0;
+    padding: 150px 0 140px;
     height:100%;
-    min-height:768px;
-    max-height: 1080px; 
+    left: 50%;
+    transform: translateX(-50%);
 }
-.container{
-    width: 940px;
-    margin: auto;
+.head-content{
     height: 100%;
 }
 .slide{
-    padding-top: 145px;
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 .slider__title{
     font-size: 48px;
     font-weight: 600;
 }
 .slider__line{
-    padding: 50px 0;
     fill:#28363d;
     width: 100%;
 }
@@ -112,7 +127,11 @@ colorHov = #c76906
     border: none;
     color: #fff;
     text-transform: uppercase;
-    margin-top: 169px;
+    margin: auto;
+    transition: .2s;
+    &:hover{
+        background-color: #c76906;
+    }
 }
 .btns{
     cursor: pointer;
@@ -129,16 +148,16 @@ colorHov = #c76906
     }
 }
 .btn__left{
-    left: 150px;
+    left: -80px;
 }
 .btn__right{
-    right: 150px;
+    right: -80px;
 }
 .btn__down{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 45px;
+    bottom: 20px;
 }
 .head-nav{
     width: 140px;
@@ -147,7 +166,7 @@ colorHov = #c76906
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 165px;
+    bottom: 100px;
 }
 .head-nav__circle{
     width: 18px;
@@ -156,5 +175,19 @@ colorHov = #c76906
     background: main;
     &_active{
         background: orange;
+    }
+}
+
+/* /////////////// adaptive */
+
+@media (max-width: 1366px){
+    .head{
+        font-size: 14px;
+    }
+    .header{
+        height: 80px;
+    }
+    .header__phone-link{
+        font-size: 18px;
     }
 }
