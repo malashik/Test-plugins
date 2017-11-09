@@ -1,17 +1,18 @@
 main = #28363d;
 orange = #ff8207;
 .feedback{
-    padding: 5vh;
+    padding: 5vh 20px 0;
     position: relative;
     text-align: center;
     height: 100vh;
+    max-width: 1440px;
+    position: relative;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-.feedback-container{
-    width: 1400px;
-}
+
 .feedback__text{
     font-size: 18px;
     color: #8198a0;
@@ -55,7 +56,6 @@ orange = #ff8207;
         border-bottom: 1px solid #e5e5e5;
         width: 100%;
     }
-
 }
 .feedback__right-title{
     font-size: 24px;
@@ -72,8 +72,12 @@ textarea{
     display: inline-block;
     vertical-align: middle;
     margin-right: 25px;
+    font-weight: 600;
+    font-size: 24px;
 }
-
+.add-photo{
+    fill: orange
+}
 .img-password{
     margin-right: 185px;
     width: 137px;
@@ -93,5 +97,10 @@ textarea{
     text-transform: uppercase;
     font-size: 18px;
     color: #fff;
+}
+.arrow-top{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
 }
 

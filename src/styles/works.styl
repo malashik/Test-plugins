@@ -19,10 +19,12 @@ orange = #ff8207;
     text-align: center;
 }
 .line{
-    padding: 10px;
+    fill: orange;
+    margin: 26px 0 14px;
 }
 .works__article-line{
-    padding: 0;
+    margin: 12px 0 0;
+    
 }
 
 
@@ -32,19 +34,14 @@ orange = #ff8207;
     color: #8198a0;
     margin-bottom: 60px;
 }
-.container{
-    width: 1425px;
-    margin:0 auto;
-    height: 67%;
-    display: flex;
-    justify-content: center;
-}
+
 .works-container{
-    width: 1425px;
+    max-width: 1465px;
     margin:0 auto;
-    height: 67%;
+    height: 75%;
     display: flex;
     justify-content: center;
+    padding: 0 20px;
     
 }
 .works-container__wrap{
@@ -55,38 +52,51 @@ orange = #ff8207;
     justify-content: flex-start;
     align-content: space-between;
     margin-right: -1.3%;
+    /* &:last-child:after{
+        width: 0;
+        margin: auto;
+        display: block;
+        content: "";
+        display: flex;
+    } */
 }
 
 .works__article {
     background-color: rgb(40, 54, 61);
-    width: 32%;
+    max-width: 32%;
     height: 48%;
     display: block;
     margin-right: 1.3%;
     transition: .2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: url(../../images/work.jpg) center no-repeat;
+    background-size: cover;
+
     &:hover{
         .works__article-info{
         opacity: 1;
         }
     }
+    
 }
 .works__article-img{
-    height: 100%;
-    background: url(../../images/work.jpg) center no-repeat;
-    background-size: cover;
+    height: 0%;
+    margin: auto;
 }
 .works__article-info{
     background-color: rgb(255, 255, 255);
     opacity: 0.8;
-    height: 30%;
-    position: relative;
-    top: -30%;
+    min-height: 30%;
+    /* position: relative; */
+    /* top: -30%; */
     padding: 20px 0 20px 60px;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    opacity: 0;
+    /* opacity: 0; */
     transition: .2s;
 }
 .works__article-title{
@@ -96,4 +106,9 @@ orange = #ff8207;
 }
 .works__article-text{
     color: #7b7b7b;
+    &:after{
+        content: "";
+        width: 310px;
+        display: inline-block;
+    }
 }

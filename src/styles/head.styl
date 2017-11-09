@@ -1,18 +1,19 @@
 
 main = #28363d
 orange = #ff8207
+colorHov = #c76906
 
 
 .head{
-    height: auto;
+    height: 100vh;
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    background: url(../../images/bg/head-bg.jpg) center no-repeat;
+    background: url(../../images/bg/head-bg.jpg) center center no-repeat;
     background-size: cover;
 }
-.head__content{
-    width: 1400px;
+.head__container{
+    max-width: 1400px;
     margin: auto;
     height: 100%;
     display: flex;
@@ -21,8 +22,9 @@ orange = #ff8207
 .header{
     height: 120px;
     background: main;
-    height: 120px;
     color: #fff;
+    padding: 0 4vh;
+    
 }
 .logo{
     width: 230px;
@@ -30,20 +32,23 @@ orange = #ff8207
     text-align: left;
 }
 .nav{
-    width: 940px;
 }
 .nav__list{
-    width: 100%;
+    width: 940px;
     display: flex;
     justify-content: space-between;
     height: 100%;
+    margin: auto
 }
 .nav__item{
-    width: 140px;
     height: 100%;
+    display: block;
     border-bottom: solid 4px transparent;
     transition: .2s;
     line-height: 120px;
+    margin: 0 auto;
+    padding: 0 10px;
+    cursor: pointer;
     &:hover{
         border-bottom:  solid 4px orange;
     }
@@ -52,22 +57,26 @@ orange = #ff8207
         color: #6b848c;
         border-bottom:  solid 4px orange;
     }
-    
+}
+.nav__item-link{
+    display: block;
+    height: 100%;
 }
 .header__phone{
     width: 230px;
     font-size: 24px;
     color: orange;
-    padding: 30px 0;
+    padding: 30px 0 30px 10px;
     font-weight: 600;
     p{
         margin: 0 0 16px;
         line-height: 1;
+        white-space: nowrap;
     }
 }
 .slider{
     position: relative;
-    height:100vh;
+    height:100%;
     min-height:768px;
     max-height: 1080px; 
 }
@@ -87,6 +96,8 @@ orange = #ff8207
 }
 .slider__line{
     padding: 50px 0;
+    fill:#28363d;
+    width: 100%;
 }
 .slider__text{
     font-size: 24px;
@@ -111,12 +122,17 @@ orange = #ff8207
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    fill:#ff9526;
+    transition: .2s;
+    &:hover{
+        fill: colorHov;
+    }
 }
 .btn__left{
-    left: 350px;
+    left: 150px;
 }
 .btn__right{
-    right: 350px;
+    right: 150px;
 }
 .btn__down{
     position: absolute;
