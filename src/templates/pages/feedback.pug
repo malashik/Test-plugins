@@ -1,6 +1,6 @@
 .feedback
     .content
-        .feedback__title.title оставьте отзыв
+        h2.feedback__title.title оставьте отзыв
         svg.works__line.line(width="30px" height="10px")
             use(xlink:href='../assets/images/icons/sprite.svg#line')
         .feedback__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
@@ -29,16 +29,13 @@
                 .feedback__right-item
                     svg.add-photo.btns(width="50px" height="60px")
                        use(xlink:href='../assets/images/icons/sprite.svg#addPhoto')
-                    h4.feedback-photo ФОТО
+                    h4.feedback__right-title.feedback-photo ФОТО
                 label.feedback__right-item
                     h4.feedback__right-title ВВЕДИТЕ КОД С КАРТИНКИ
                     input.input(type="password" required)
-                .feedback__right-item.feedback__right-item_psw
-                    .img-password
-                        img.img-password(src="./assets/images/psw.jpg", alt="")
-                    input.input-btn.btns(type="submit" value="Отправить" required)
+                    .feedback__right-item_psw
+                        .img-password
+                            img.img-password(src="./assets/images/psw.jpg", alt="")
+                        input.input-btn.btns(type="submit" value="Отправить" required)
     svg.arrow-top(width="60px" height="60px")
        use(xlink:href='../assets/images/icons/sprite.svg#up')
-    //-    use(xlink:href='../assets/images/icons/arrow_down.svg#down')
-        //- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.5px" height="64.5px"><path fill-rule="evenodd"  stroke="rgb(255, 130, 7)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M11.500,1.500 L51.500,1.500 C57.023,1.500 61.500,5.977 61.500,11.500 L61.500,51.500 C61.500,57.023 57.023,61.500 51.500,61.500 L11.500,61.500 C5.977,61.500 1.500,57.023 1.500,51.500 L1.500,11.500 C1.500,5.977 5.977,1.500 11.500,1.500 Z"/></svg>
-        //- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.5px" height="64.5px"><path fill-rule="evenodd"  stroke="rgb(255, 130, 7)" stroke-width="3px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M11.500,1.500 L51.500,1.500 C57.023,1.500 61.500,5.977 61.500,11.500 L61.500,51.500 C61.500,57.023 57.023,61.500 51.500,61.500 L11.500,61.500 C5.977,61.500 1.500,57.023 1.500,51.500 L1.500,11.500 C1.500,5.977 5.977,1.500 11.500,1.500 Z"/></svg>
