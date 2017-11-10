@@ -11,6 +11,18 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(1);
     })
 
+//////////   owl-carousel
+    if(window.outerWidth <= 768 || window.outerHeight <= 520){
+        $('.works-container__wrap').addClass('owl-carousel');
+        $('.advantages__list').addClass('owl-carousel');
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin:15,
+            stagePadding:30,
+            items: 1
+        });
+    }
+
 ///// hamburger
     var hamburger = $('.hamburger');
     var fixedMenu = $('#fixedMenu');
