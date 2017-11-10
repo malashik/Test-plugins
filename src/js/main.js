@@ -1,3 +1,4 @@
+///// fullpage
 $(document).ready(function() {
     $('#fullpage').fullpage({
         // anchors:['P1','P2','P3','P4']
@@ -10,10 +11,22 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(1);
     })
 
-    //// slider    
-    const slides = document.querySelectorAll('.slider-item');
-    const navItems = document.getElementsByClassName('head-nav__circle');
-    let current = 0;
+///// hamburger
+    var hamburger = $('.hamburger');
+    var fixedMenu = $('#fixedMenu');
+
+    hamburger.on('click',function(){
+        hamburger.toggleClass('hamburger_active');
+        fixedMenu.toggle();
+        console.log('click');
+        console.log(hamburger);
+    })
+
+
+//// slider
+    var slides = document.querySelectorAll('.slider-item');
+    var navItems = document.getElementsByClassName('head-nav__circle');
+    var current = 0;
     if(slides.length > 1){
         function goToSlide(n){
             slides[current].className = 'slider-item';
@@ -27,18 +40,15 @@ $(document).ready(function() {
             }
             slides[current].className = 'slider-item slider-item_active';
             navItems[current].className = 'head-nav__circle head-nav__circle_active';
-            
         }
         $('.btn-next').on('click', function(){
             goToSlide(1);
-            console.log('current=', current)
         })
         $('.btn-prev').on('click', function(){
             goToSlide(-1);
-            console.log('current=', current)
         })
         $('.head-nav__circle').on('click', function(){
-            let indexActive = $(this).index();
+            var indexActive = $(this).index();
             slides[current].className = 'slider-item';
             navItems[current].className = 'head-nav__circle';
             current = indexActive;
