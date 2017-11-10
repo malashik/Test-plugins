@@ -26,12 +26,11 @@ body{
 	box-sizing: border-box;
 }
 
-.wrapper{                   
+.wrapper{
 	width: 100%;
 	min-height: 100%;
 	position: relative;
 	margin: 0 auto;
-	overflow: hidden;
 }
 
 ul{
@@ -94,7 +93,12 @@ h6{
     border-radius: 50%;
 	background: main;
 	margin-bottom: 9px;
-    &_active{
+    &.active{
         background: orange;
     }
+}
+.fixed-nav__link{
+	display: block;
+	height: 100%;
+	cursor: pointer;
 }

@@ -1,4 +1,4 @@
-section.feedback
+.feedback
     .content
         .feedback__title.title оставьте отзыв
         svg.works__line.line(width="30px" height="10px")
@@ -27,7 +27,7 @@ section.feedback
                     h4.feedback__right-title ОТЗЫВ
                     textarea.textarea(placeholder="Ваше сообщение" required)
                 .feedback__right-item
-                    svg.add-photo(width="50px" height="60px")
+                    svg.add-photo.btns(width="50px" height="60px")
                        use(xlink:href='../assets/images/icons/sprite.svg#addPhoto')
                     h4.feedback-photo ФОТО
                 label.feedback__right-item
@@ -36,7 +36,7 @@ section.feedback
                 .feedback__right-item.feedback__right-item_psw
                     .img-password
                         img.img-password(src="./assets/images/psw.jpg", alt="")
-                    input.input-btn(type="submit" value="Отправить" required)
+                    input.input-btn.btns(type="submit" value="Отправить" required)
     svg.arrow-top(width="60px" height="60px")
        use(xlink:href='../assets/images/icons/sprite.svg#up')
     //-    use(xlink:href='../assets/images/icons/arrow_down.svg#down')

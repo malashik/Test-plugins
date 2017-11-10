@@ -5,20 +5,29 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title webcom-media
+        //- link(rel="stylesheet", href="./assets/styles/common/onepage-scroll.css")
         link(rel="stylesheet", href="./assets/styles/common/menu.min.css")
     body
-        .wrapper
-            ul.fixed-nav.btns
-                li.fixed-nav__circle.fixed-nav__circle_active
-                li.fixed-nav__circle
-                li.fixed-nav__circle
-                li.fixed-nav__circle
-                li.fixed-nav__circle
-            include ./pages/head.pug
-            include ./pages/works.pug
-            include ./pages/advantages.pug
-            include ./pages/feedback.pug
-        include ./pages/footer.pug
-        script(src="../assets/js/jquery-3.2.1.min.js")
-        script(src="../assets/js/fullPage/jquery.fullPage.min.js")
+        ul.fixed-nav(id="fixedMenu")
+            li.fixed-nav__circle.active(data-menuanchor="P1")
+                a.fixed-nav__link(href="#P1")
+            li.fixed-nav__circle(data-menuanchor="P2")
+                a.fixed-nav__link(href="#P2")
+            li.fixed-nav__circle(data-menuanchor="P3")
+                a.fixed-nav__link(href="#P3")
+            li.fixed-nav__circle(data-menuanchor="P4")
+                a.fixed-nav__link(href="#P4")
+        .wrapper.main(id="fullpage")
+            //- .section
+            .section(data-anchor='P1')
+                include ./pages/head.pug
+            .section(data-anchor='P2')
+                include ./pages/works.pug
+            .section(data-anchor='P3')
+                include ./pages/advantages.pug
+            .section(data-anchor='P4')
+                include ./pages/feedback.pug
+            include ./pages/footer.pug
+        script(src="./assets/js/jquery-3.2.1.min.js")
+        script(src="./assets/js/fullpage/jquery.fullPage.min.js")
         script(src="./assets/js/main.js")
