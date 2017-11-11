@@ -1,12 +1,16 @@
 # For Webcom-Media
 
-Для работы сборки у вас должны быть установлены
+* Для работы сборки у вас должны быть установлены
 
-npm 5
-gulp-cli
+-npm 5
+
+-gulp-cli
 
 Как установить проект
 
-clone this repo
-npm i
-gulp
+1) clone this repo
+
+2) npm i
+
+3) gulp
+
