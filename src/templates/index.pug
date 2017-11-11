@@ -16,6 +16,8 @@ html(lang="en")
                 a.fixed-nav__link(href="#P3")
             li.fixed-nav__circle(data-menuanchor="P4")
                 a.fixed-nav__link(href="#P4")
+            li.fixed-nav__circle(data-menuanchor="P5")
+                a.fixed-nav__link(href="#P5")
         .wrapper.main(id="fullpage")
             .section(data-anchor='P1')
                 include ./pages/head.pug
@@ -25,8 +27,11 @@ html(lang="en")
                 include ./pages/advantages.pug
             .section(data-anchor='P4')
                 include ./pages/feedback.pug
-            include ./pages/footer.pug
+            .section(data-anchor='P5')
+                include ./pages/foot.pug
         script(src="./assets/js/jquery-3.2.1.min.js")
         script(src="./assets/js/fullpage/jquery.fullPage.min.js")
         script(src="./assets/js/owl-carousel/owl.carousel.min.js")
+        script(src="../assets/js/map.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBpOUcTHdp-8cmj4sEbxFU6QmLqh64Aw&callback=initMap" async defer)
         script(src="./assets/js/main.js")
