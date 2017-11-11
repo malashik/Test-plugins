@@ -1,5 +1,7 @@
-///// fullpage
+
 $(document).ready(function() {
+
+    ///// fullpage
     $('#fullpage').fullpage({
         // anchors:['P1','P2','P3','P4']
         menu: '#fixedMenu'
@@ -11,7 +13,7 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(1);
     })
 
-//////////   owl-carousel
+    //////////   owl-carousel
     if(window.outerWidth <= 768 || window.outerHeight <= 520){
         $('.works-container__wrap').addClass('owl-carousel');
         $('.advantages__list').addClass('owl-carousel');
@@ -23,7 +25,7 @@ $(document).ready(function() {
         });
     }
 
-///// hamburger
+    ///// hamburger
     var hamburger = $('.hamburger');
     var fixedMenu = $('#fixedMenu');
 
@@ -35,7 +37,7 @@ $(document).ready(function() {
     })
 
 
-//// slider
+    //// slider
     var slides = document.querySelectorAll('.slider-item');
     var navItems = document.getElementsByClassName('head-nav__circle');
     var current = 0;

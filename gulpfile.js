@@ -7,7 +7,6 @@ const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 
 const stylus = require('gulp-stylus');
-var csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
@@ -44,25 +43,18 @@ gulp.task('templates', function() {
 		.pipe(gulp.dest(paths.root));
 })
 
-// //html +
-// gulp.task('templates', function() {
-// 	return gulp.src('src/templates/**/*.html')
-// 		.pipe(gulp.dest(paths.root));
-// })
-
 //css +
 gulp.task('styles', function(){
 	return gulp.src(paths.styles.src)
-		// .pipe(wait(600))
 		.pipe(sourcemaps.init())
 		.pipe(autoprefixer())
-		.pipe(stylus())
-		// .pipe(csso())
+		.pipe(stylus({
+			compress: true
+		  }))
 		.pipe(sourcemaps.write())
 		.on('error', notify.onError())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.styles.dest))
-		// pipe(browserSync.stream())
 		
 })
 
