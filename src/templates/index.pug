@@ -1,3 +1,7 @@
+block variables
+- Nav = ['P1','P2','P3','P4','P5']
+- NavHref = ['#P1','#P2','#P3','#P4','#P5']
+
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -7,17 +11,10 @@ html(lang="en")
         title webcom-media
         link(rel="stylesheet", href="./assets/styles/common/menu.min.css")
     body
-        ul.fixed-nav(id="fixedMenu")
-            li.fixed-nav__circle.active(data-menuanchor="P1")
-                a.fixed-nav__link(href="#P1")
-            li.fixed-nav__circle(data-menuanchor="P2")
-                a.fixed-nav__link(href="#P2")
-            li.fixed-nav__circle(data-menuanchor="P3")
-                a.fixed-nav__link(href="#P3")
-            li.fixed-nav__circle(data-menuanchor="P4")
-                a.fixed-nav__link(href="#P4")
-            li.fixed-nav__circle(data-menuanchor="P5")
-                a.fixed-nav__link(href="#P5")
+        .modal-window 
+            .modal-window__text Модальное окно
+                span.modal-window__close X
+        include ./pages/header.pug
         .wrapper.main(id="fullpage")
             .section(data-anchor='P1')
                 include ./pages/head.pug
@@ -32,6 +29,7 @@ html(lang="en")
         script(src="./assets/js/jquery-3.2.1.min.js")
         script(src="./assets/js/fullpage/jquery.fullPage.min.js")
         script(src="./assets/js/owl-carousel/owl.carousel.min.js")
+        //- script(src="./assets/js/fancybox/jquery.fancybox.pack.js")
         script(src="../assets/js/map.js")
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBpOUcTHdp-8cmj4sEbxFU6QmLqh64Aw&callback=initMap" async defer)
         script(src="./assets/js/main.js")

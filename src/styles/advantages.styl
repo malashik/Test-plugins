@@ -1,45 +1,55 @@
 main = #28363d;
 orange = #ff8207;
 .advantages{
-    padding: 4vh 20px 20px;
+    padding: 100px 20px 15px;
     position: relative;
     text-align: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    &__text{
+        font-size: 18px;
+        color: #8198a0;
+    }
+    &__list{
+        display: flex;
+        flex-flow row wrap
+    }
+    &__item{
+        height: 50%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 15px 0;
+
+        &-title{
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.42;
+        }
+        &-text{
+            margin-bottom: auto;
+            color:#8198a0;
+        }
+    }
+    &__svg{
+        margin: auto;
+        fill: orange;
+    }
 }
 
-.advantages__text{
-    font-size: 18px;
-    color: #8198a0;
-}
-.advantages__list{
-    display: flex;
-    flex-flow row wrap
-}
-.advantages__item{
-    height: 50%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 20px 15px 0;
-}
-.advantages__svg{
-    margin: auto;
-    fill: orange;
-}
-.advantages__item-title{
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.42;
-}
-.advantages__item-text{
-    margin-bottom: auto;
-    color:#8198a0;
-}
  /////////////// adaptive 
+ @media screen and (max-height: 520px){
+    //// oul carousel
+
+        .advantages__item{
+            margin: auto;
+            height: 45vh
+        }
+}
 
  @media screen and (max-width: 1366px) {
     .container{
@@ -47,33 +57,36 @@ orange = #ff8207;
     }
 }
 @media screen and (max-width: 1024px){
-    .advantages__title{
-        font-size: 28px;
-        line-height: 1.2;
-        font-weight: 600;
+    .advantages{
+        &__title{
+            font-size: 28px;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+        &__line{
+            margin: auto;
+        }
+        &__text{
+            font-size: 16px;
+        }
+        &__item-text{
+            font-size: 14px;
+        }
     }
-    .advantages__line{
-        margin: auto;
-    }
-    .advantages__text{
-        font-size: 16px;
-    }
-    .advantages__item-text{
-        font-size: 14px;
-    }
-
 }
+
 @media screen and (max-width: 768px) {
     //// oul carousel
-    .advantages__item {
-        height: 50vh;
-        width: 100%;
-        padding: 20px 15px;
+    .advantages{
+        padding-top: 80px;
+        
+        &__item {
+            height: 50vh;
+            width: 100%;
+            padding: 20px 15px;
+        }
     }
 }
 @media screen and (max-width: 480px) {
-    //// oul carousel
-}
-@media screen and (max-height: 520px){
     //// oul carousel
 }

@@ -1,48 +1,17 @@
+block variables
+- arr = [{xHref:'../assets/images/icons/sprite.svg#adv1', num:1},{xHref:'../assets/images/icons/sprite.svg#adv2', num:2},{xHref:'../assets/images/icons/sprite.svg#adv3', num:3},{xHref:'../assets/images/icons/sprite.svg#adv4', num:4},{xHref:'../assets/images/icons/sprite.svg#adv5', num:5},{xHref:'../assets/images/icons/sprite.svg#adv6', num:6},{xHref:'../assets/images/icons/sprite.svg#adv7', num:7},{xHref:'../assets/images/icons/sprite.svg#adv8', num:8}]
+
 .advantages
     .content
         .advantages__title.title Почему мы
         svg.advantages__line.line(width="30px" height="10px")
-            use(xlink:href='../assets/images/icons/sprite.svg#line')
+            use(xlink:href= '../assets/images/icons/sprite.svg#line')
         .advantages__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
     .container
         ul.advantages__list
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv1')
-                h4.advantages__item-title.title Преимущество 1
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv2')
-                h4.advantages__item-title.title Преимущество 2
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv3')
-                h4.advantages__item-title.title Преимущество 3
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv4')
-                h4.advantages__item-title.title Преимущество 4
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv5')
-                h4.advantages__item-title.title Преимущество 5
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv6')
-                h4.advantages__item-title.title Преимущество 6
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv7')
-                h4.advantages__item-title.title Преимущество 7
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            li.advantages__item
-                svg.advantages__svg(width="50px" height="40px")
-                    use(xlink:href='../assets/images/icons/sprite.svg#adv8')
-                h4.advantages__item-title.title Преимущество 8
-                .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+            - for (var i=0; i<arr.length; i++)
+                li.advantages__item
+                    svg.advantages__svg(width="50px" height="40px")
+                        use(xlink:href=arr[i].xHref)
+                    h4.advantages__item-title.title Преимущество #{arr[i].num}
+                    .advantages__item-text Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium

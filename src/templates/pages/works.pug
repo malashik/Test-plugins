@@ -6,39 +6,10 @@
         .works__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
     .container
         .works-container__wrap
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
-            a.works__article(href="#")
-                .works__article-info
-                    h4.works__article-title.title название работы
-                    svg.works__article-line.line(width="30px" height="10px")
-                        use(xlink:href='../assets/images/icons/sprite.svg#line')
-                    .works__article-text описание работы
+            - for (var i = 0; i < 6; i++)
+                a.works__article(href="#")
+                    .works__article-info
+                        h4.works__article-title.title название работы
+                        svg.works__article-line.line(width="30px" height="10px")
+                            use(xlink:href='../assets/images/icons/sprite.svg#line')
+                        .works__article-text описание работы
