@@ -32,16 +32,25 @@ $(document).ready(function() {
 
 
     //////////   owl-carousel
-    if(window.outerWidth <= 768 || window.outerHeight <= 520){
-        $('.works-container__wrap').addClass('owl-carousel');
-        $('.advantages__list').addClass('owl-carousel');
-        $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin:15,
-            stagePadding:30,
-            items: 1
-        });
-    }
+    // var carouselInit = function() {
+        if(window.outerWidth <= 768 || window.outerHeight <= 520){
+            console.log('resize');
+            $('.works-container__wrap').addClass('owl-carousel');
+            $('.advantages__list').addClass('owl-carousel');
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin:15,
+                stagePadding:30,
+                items: 1
+            });
+        }
+    // }
+        
+    // $(document).resize( function(){
+    //     console.log('resize')
+        
+    // })
+    
 
     ///// hamburger
     var hamburger = $('.hamburger');
@@ -50,8 +59,6 @@ $(document).ready(function() {
     hamburger.on('click',function(){
         hamburger.toggleClass('hamburger_active');
         fixedMenu.toggle();
-        console.log('click');
-        console.log(hamburger);
     })
 
 
