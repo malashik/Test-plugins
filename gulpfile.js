@@ -2,8 +2,6 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const del = require('del');
 const notify = require('gulp-notify');
-// const imagemin = require('gulp-imagemin');
-// const cache = require('gulp-cache');
 const browserSync = require('browser-sync').create();
 
 const stylus = require('gulp-stylus');
@@ -15,15 +13,15 @@ const autoprefixer = require('gulp-autoprefixer');
 const paths = {
 	root: './build',
 	templates: {
-		pages: 'src/templates/**/*.pug',
+		pages: 'src/**/*.pug',
 		dest: 'build/pages'
 	},
 	styles: {
-		src: 'src/styles/common/menu.styl',
+		src: 'src/styles/menu.styl',
 		dest: 'build/assets/styles/common/'
 	},
 	images: {
-		src: 'src/images/**/*.*',
+		src: 'src/**/*.{jpg,png,svg}',
 		dest: 'build/assets/images/'
 	}
 }
@@ -70,7 +68,7 @@ gulp.task('js', function() {
 		   .pipe(gulp.dest('build/assets/js/'))
 });
 
-//сжатие картинок +
+// изображения +
 gulp.task('images', function(){
 	return gulp.src(paths.images.src)
 		// .pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
@@ -80,10 +78,9 @@ gulp.task('images', function(){
 // следим за исходниками, папка src
 
 gulp.task('watch', function(){
-    gulp.watch("src/templates/**/*.*", gulp.series('templates'));
-    // gulp.watch(paths.styles.src, ['styles']);
+    gulp.watch("src/**/*.pug", gulp.series('templates'));
     gulp.watch("src/styles/**/*.styl", gulp.series('styles'));
-    gulp.watch("src/images/**/*.*", gulp.series('images'));
+    gulp.watch("src/**/*.{jpg,png,svg}", gulp.series('images'));
     gulp.watch("src/fonts/**/*.*", gulp.series('fonts'));
     gulp.watch("src/js/**/*.*", gulp.series('js'));
 })

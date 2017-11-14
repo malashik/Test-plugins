@@ -14,22 +14,21 @@ html(lang="en")
         .modal-window 
             .modal-window__text Модальное окно
                 span.modal-window__close X
-        include ./pages/header.pug
+        include ./common/header.pug
         .wrapper.main(id="fullpage")
             .section(data-anchor='P1')
-                include ./pages/head.pug
+                include ../blocks/head/head.pug
             .section(data-anchor='P2')
-                include ./pages/works.pug
+                include ../blocks/works/works.pug
             .section(data-anchor='P3')
-                include ./pages/advantages.pug
+                include ../blocks/advantages/advantages.pug
             .section(data-anchor='P4')
-                include ./pages/feedback.pug
+                include ../blocks/feedback/feedback.pug
             .section(data-anchor='P5')
-                include ./pages/foot.pug
+                include ../blocks/foot/foot.pug
         script(src="./assets/js/jquery-3.2.1.min.js")
         script(src="./assets/js/fullpage/jquery.fullPage.min.js")
         script(src="./assets/js/owl-carousel/owl.carousel.min.js")
-        //- script(src="./assets/js/fancybox/jquery.fancybox.pack.js")
         script(src="../assets/js/map.js")
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYBpOUcTHdp-8cmj4sEbxFU6QmLqh64Aw&callback=initMap" async defer)
         script(src="./assets/js/main.js")

@@ -32,7 +32,6 @@ $(document).ready(function() {
 
 
     //////////   owl-carousel
-    // var carouselInit = function() {
         if(window.outerWidth <= 768 || window.outerHeight <= 520){
             console.log('resize');
             $('.works-container__wrap').addClass('owl-carousel');
@@ -44,13 +43,6 @@ $(document).ready(function() {
                 items: 1
             });
         }
-    // }
-        
-    // $(document).resize( function(){
-    //     console.log('resize')
-        
-    // })
-    
 
     ///// hamburger
     var hamburger = $('.hamburger');
