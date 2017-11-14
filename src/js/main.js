@@ -33,7 +33,6 @@ $(document).ready(function() {
 
     //////////   owl-carousel
         if(window.outerWidth <= 768 || window.outerHeight <= 520){
-            console.log('resize');
             $('.works-container__wrap').addClass('owl-carousel');
             $('.advantages__list').addClass('owl-carousel');
             $(".owl-carousel").owlCarousel({

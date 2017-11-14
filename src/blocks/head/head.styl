@@ -9,7 +9,7 @@ colorHov = #c76906
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    background: url(../../images/bg/head-bg.jpg) center center no-repeat;
+    background: url(../../images/head/head/bg/head-bg.jpg) center center no-repeat;
     background-size: cover;
 
     &__container{
@@ -124,6 +124,7 @@ colorHov = #c76906
             }
         }
         &-link{
+            text-transform: uppercase;
             color: #fff;
             white-space: nowrap;
             padding: 0 10px;
@@ -416,6 +417,12 @@ colorHov = #c76906
         height: 100%;
         width: 75%;
     }
+    .header{
+        padding: 0 20px 0 0;
+    }
+    .header__btn{
+        display: none;
+    }
     .btn-prev {
         left: 7vw;
     }
@@ -423,13 +430,14 @@ colorHov = #c76906
         right: 35px;
     }
     .header__phone,
-    .logo{
+    .header .logo{
         display: none;
     }
 }
 @media screen and (max-width: 768px) {
     .header {
         height: 60px;
+        padding: 0 4vh;
     }
     .header_fixed .header__btn{
         display: none;
@@ -455,7 +463,7 @@ colorHov = #c76906
     .hamburger{
         display: flex;
     }
-    .logo {
+    .header .logo {
         margin: auto 0;
         display: block;
     }

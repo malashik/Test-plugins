@@ -13,7 +13,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const paths = {
 	root: './build',
 	templates: {
-		pages: 'src/**/*.pug',
+		pages: 'src/templates/index.pug',
 		dest: 'build/pages'
 	},
 	styles: {
@@ -21,7 +21,7 @@ const paths = {
 		dest: 'build/assets/styles/common/'
 	},
 	images: {
-		src: 'src/**/*.{jpg,png,svg}',
+		src: 'src/blocks/**/*.{jpg,png,svg}',
 		dest: 'build/assets/images/'
 	}
 }
@@ -79,7 +79,7 @@ gulp.task('images', function(){
 
 gulp.task('watch', function(){
     gulp.watch("src/**/*.pug", gulp.series('templates'));
-    gulp.watch("src/styles/**/*.styl", gulp.series('styles'));
+    gulp.watch("src/**/*.styl", gulp.series('styles'));
     gulp.watch("src/**/*.{jpg,png,svg}", gulp.series('images'));
     gulp.watch("src/fonts/**/*.*", gulp.series('fonts'));
     gulp.watch("src/js/**/*.*", gulp.series('js'));
