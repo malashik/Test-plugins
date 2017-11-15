@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    
     ///// Подключение fullpage, фиксация хедера, добавление прозрачности на слайде с картой
         $('#fullpage').fullpage({
             // anchors:['P1','P2','P3','P4']
@@ -33,9 +32,6 @@ $(document).ready(function() {
 
 
     //////////  Подключение owl-carousel при ширине экрана 768рх
-    
-    /*здесь используется один и тот же код 2 раза,понимаю, что очень плохо и некрасиво, стыжусь...
-     знаю, что этот костыль стоило бы исправить применением модульной системы */
 
     var isCarousel = function(){
         if(window.outerWidth <= 768 ){
@@ -48,8 +44,9 @@ $(document).ready(function() {
                 items: 1
             });
         } else{
-            $('.works-container__wrap').removeClass('owl-carousel');
-            $('.advantages__list').removeClass('owl-carousel');
+            $(".owl-carousel").owlCarousel(
+                {return: false}
+            )
         }
         // console.log('click');
         // console.log('window.outerWidth=',window.outerWidth);
