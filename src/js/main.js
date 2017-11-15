@@ -1,28 +1,29 @@
 $(document).ready(function() {
 
-    ///// fullpage
-    $('#fullpage').fullpage({
-        // anchors:['P1','P2','P3','P4']
-        menu: '#headerMenu',
-        navigation: true,
-        afterLoad: function(anchorLink, index){
-            var loadedSection = $(this);
+    
+    ///// Подключение fullpage, фиксация хедера, добавление прозрачности на слайде с картой
+        $('#fullpage').fullpage({
+            // anchors:['P1','P2','P3','P4']
+            menu: '#headerMenu',
+            navigation: true,
+            afterLoad: function(anchorLink, index){
+                var loadedSection = $(this);
 
-            // header_fixed
-            if(index !== 1 ){
-                $('.header').addClass('header_fixed')
-            }else{
-                $('.header').removeClass('header_fixed')
-            }
+                // header_fixed
+                if(index !== 1 ){
+                    $('.header').addClass('header_fixed')
+                }else{
+                    $('.header').removeClass('header_fixed')
+                }
 
-            // header_map
-            if(index == 5){
-                $('.header').addClass('header_map')
-            }else{
-                $('.header').removeClass('header_map')
+                // header_map
+                if(index == 5){
+                    $('.header').addClass('header_map')
+                }else{
+                    $('.header').removeClass('header_map')
+                }
             }
-        }
-    })
+        })
     $('.btn__down').on('click',function(){
         $.fn.fullpage.moveSectionDown();
     })
@@ -31,8 +32,13 @@ $(document).ready(function() {
     })
 
 
-    //////////   owl-carousel
-        if(window.outerWidth <= 768 || window.outerHeight <= 520){
+    //////////  Подключение owl-carousel при ширине экрана 768рх
+    
+    /*здесь используется один и тот же код 2 раза,понимаю, что очень плохо и некрасиво, стыжусь...
+     знаю, что этот костыль стоило бы исправить применением модульной системы */
+
+    var isCarousel = function(){
+        if(window.outerWidth <= 768 ){
             $('.works-container__wrap').addClass('owl-carousel');
             $('.advantages__list').addClass('owl-carousel');
             $(".owl-carousel").owlCarousel({
@@ -41,9 +47,33 @@ $(document).ready(function() {
                 stagePadding:30,
                 items: 1
             });
+        } else{
+            $('.works-container__wrap').removeClass('owl-carousel');
+            $('.advantages__list').removeClass('owl-carousel');
         }
+        console.log('click');
+        console.log('window.outerWidth=',window.outerWidth);
+    }
+    isCarousel();
+    window.addEventListener("resize",function(){
+        if(window.outerWidth <= 768 ){
+            $('.works-container__wrap').addClass('owl-carousel');
+            $('.advantages__list').addClass('owl-carousel');
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin:15,
+                stagePadding:30,
+                items: 1
+            });
+        } else{
+            $('.works-container__wrap').removeClass('owl-carousel');
+            $('.advantages__list').removeClass('owl-carousel');
+        }
+        console.log('click');
+        console.log('window.outerWidth=',window.outerWidth);
+    })
 
-    ///// hamburger
+    ///// Анимация на hamburger
     var hamburger = $('.hamburger');
     var fixedMenu = $('#fixedMenu');
 
@@ -104,6 +134,5 @@ $(document).ready(function() {
     modalWindowClose.on('click', function(){
         modalWindow.css('display', 'none');
     })
-    
 })
 

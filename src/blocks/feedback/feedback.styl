@@ -132,7 +132,7 @@ orange = #ff8207;
         }
     }
 }
-@media screen and (max-height: 719px) and (max-width: 1024px){
+@media screen and (max-height: 719px) and (orientation: landscape){
     .feedback__container{
         width: 65%;
         height: 90%;
@@ -148,8 +148,9 @@ orange = #ff8207;
 @media screen and (max-width: 1024px){
     .feedback{
         &__container {
-            width: 95%;
             padding-top: 0;
+            margin: auto;
+            width: 90%;
         }
         &__title{
             font-size: 28px;
@@ -184,6 +185,10 @@ orange = #ff8207;
 @media screen and (max-width: 768px) {
     .feedback{
         padding-top: 80px;
+        &__container{
+            width: 95%;
+            // margin: auto;
+        }
 
         &__right-item{
             input,

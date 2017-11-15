@@ -27,8 +27,6 @@ header.header
             svg.hamburger__bottom(width="40px" height="5px")
                 use(xlink:href='./assets/images/head/head/icons/hamburger_parts.svg#bottom')
             ul.hamburger-nav(id="headerMenu")
-                .nav__item.hamburger__btn.btns
-                    a.hamburger__btn-link.modalWindowTrigger(href="#") оформить заявку
                 - for (var i = 0;i < Nav.length; i++)
                     li.nav__item(data-menuanchor=Nav[i])
                         a.nav__item-link(href=NavHref[i])=NavName[i]
