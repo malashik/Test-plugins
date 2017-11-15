@@ -51,27 +51,11 @@ $(document).ready(function() {
             $('.works-container__wrap').removeClass('owl-carousel');
             $('.advantages__list').removeClass('owl-carousel');
         }
-        console.log('click');
-        console.log('window.outerWidth=',window.outerWidth);
+        // console.log('click');
+        // console.log('window.outerWidth=',window.outerWidth);
     }
     isCarousel();
-    window.addEventListener("resize",function(){
-        if(window.outerWidth <= 768 ){
-            $('.works-container__wrap').addClass('owl-carousel');
-            $('.advantages__list').addClass('owl-carousel');
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin:15,
-                stagePadding:30,
-                items: 1
-            });
-        } else{
-            $('.works-container__wrap').removeClass('owl-carousel');
-            $('.advantages__list').removeClass('owl-carousel');
-        }
-        console.log('click');
-        console.log('window.outerWidth=',window.outerWidth);
-    })
+    window.addEventListener("resize", isCarousel)
 
     ///// Анимация на hamburger
     var hamburger = $('.hamburger');
